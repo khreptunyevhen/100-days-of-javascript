@@ -34,12 +34,37 @@ function searchRecipe() {
       <img src=${meal.strMealThumb}>
       <div>
         <h2>Ingredients:</h2>
-        <ul>${getIngredients(meal)}</ul>
+        <ul>${getIngredients(getItem)}</ul>
       </div>
       `;
 
       recipeContainer.innerHTML = recipeHtml;
+
+      function getIngredients(getItemArray) {
+        const ingredients = getItemArray(meal, "strIngredient");
+        const measure = getItemArray(meal, "strMeasure");
+        let ingredientsHtml = "";
+
+        for (let i = 0; i < ingredients.length; i++) {
+          ingredientsHtml += `<li>${i + 1}. ${ingredients[i]} - ${
+            measure[i]
+          }.</li>`;
+        }
+
+        return (recipeContainer.innerHTML = ingredientsHtml);
+      }
     });
 }
 
-function getIngredients(meal) {}
+function getItem(mealObject, itemName) {
+  const getItemArray = [];
+  const mealObjectLength = Object.keys(mealObject).length;
+
+  for (let i = 0; i < mealObjectLength; i++) {
+    if (mealObject[`${itemName}${i}`]) {
+      getItemArray.push(mealObject[`${itemName}${i}`]);
+    }
+  }
+
+  return getItemArray;
+}
