@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 50px 10px;
+}
+
+.question {
+  margin-bottom: 40px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.answer,
+.nextBtn {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.answer:hover:not([disabled]) {
+  background-color: grey;
+}
+
+.answer:disabled {
+  cursor: no-drop;
+}
+
+.correct {
+  background-color: greenyellow;
+}
+
+.incorrect {
+  background-color: palevioletred;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
