@@ -1,3 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+
+:root {
+  --primary: #833df7;
+  --bg: #471598;
+  --dark: #323232;
+  --ligth: #fbfcfd;
+  --danger: #ff7271;
+  --danger-dark: #c52525;
+  --success: #dbfedd;
+  --success-dark: #37d91f;
+  --grey-ligth: #a8a6a6;
+}
+
 *,
 *::before,
 *::after {
@@ -6,10 +20,28 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--bg);
+  color: var(--ligth);
+}
+
 .container {
   max-width: 320px;
-  margin: 0 auto;
-  padding: 50px 10px;
+  margin: auto;
+  height: fit-content;
+  padding: 40px;
+  background-color: var(--primary);
+  border-radius: 20px;
+  border: 1px solid var(--ligth);
 }
 
 .question {
@@ -25,12 +57,25 @@
 
 .answer,
 .nextBtn {
+  padding: 10px 20px;
+  text-align: left;
+  border: 1px solid var(--dark);
+  border-radius: 10px;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--ligth);
   cursor: pointer;
-  padding: 10px;
+  transition: all 0.2s ease-in;
 }
 
 .answer:hover:not([disabled]) {
-  background-color: grey;
+  background-color: var(--grey-ligth);
+}
+
+.nextBtn {
+  color: var(--success-dark);
+  font-weight: 500;
+  background-color: var(--success);
+  border-color: var(--success-dark);
 }
 
 .answer:disabled {
@@ -38,11 +83,35 @@
 }
 
 .correct {
-  background-color: greenyellow;
+  position: relative;
+  background-color: var(--success);
+  border: 1px solid var(--success-dark);
+  color: var(--success-dark);
 }
 
 .incorrect {
-  background-color: palevioletred;
+  position: relative;
+  background-color: var(--danger);
+  border: 1px solid var(--danger-dark);
+  color: var(--danger-dark);
+}
+
+.incorrect::after,
+.correct::after {
+  position: absolute;
+  font-family: "Material Icons";
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.incorrect::after {
+  content: "error_outline";
+}
+
+.correct::after {
+  content: "check_circle";
 }
 
 .hidden {

@@ -184,6 +184,8 @@ function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
 
+  // resetField();
+  // questionEl.textContent = "Choose the quiz.";
   showQuestion();
 }
 
