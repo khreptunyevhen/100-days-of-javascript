@@ -24,11 +24,11 @@ const questions = [
     question: "What is the HTML element used to display an image?",
     answers: [
       {
-        answer: "<image>",
+        answer: "<img>",
         correct: true,
       },
       {
-        answer: "<img>",
+        answer: "<image>",
         correct: false,
       },
       {
@@ -171,6 +171,8 @@ const questions = [
   },
 ];
 
+shuffleAnswers(questions);
+
 const questionEl = document.querySelector(".question");
 const answersButtons = document.querySelector(".answers");
 const nextButtonEl = document.querySelector(".nextBtn");
@@ -196,7 +198,7 @@ function showQuestion() {
     questions[currentQuestionIndex].question
   }`;
 
-  const answersList = questions[currentQuestionIndex].answers;
+  const answersList = shuffleAnswers(questions[currentQuestionIndex].answers);
 
   answersList.forEach((btnAnswer) => {
     const button = createButton(btnAnswer.answer, answersButtons);
@@ -255,6 +257,15 @@ function showScore() {
 
   questionEl.textContent = `Your score: ${score}/${questions.length}`;
   nextButtonEl.textContent = "Try again";
+}
+
+function shuffleAnswers(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let randomIndex = Math.floor(Math.random() * (i + 1));
+    [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+  }
+
+  return array;
 }
 
 nextButtonEl.addEventListener("click", () => {
