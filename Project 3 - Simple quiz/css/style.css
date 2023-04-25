@@ -56,7 +56,8 @@ body {
 }
 
 .answer,
-.nextBtn {
+.nextBtn,
+.start-btn {
   padding: 10px 20px;
   text-align: left;
   border: 1px solid var(--dark);
@@ -71,7 +72,8 @@ body {
   background-color: var(--grey-ligth);
 }
 
-.nextBtn {
+.nextBtn,
+.start-btn {
   color: var(--success-dark);
   font-weight: 500;
   background-color: var(--success);

@@ -176,6 +176,7 @@ shuffleAnswers(questions);
 const questionEl = document.querySelector(".question");
 const answersButtons = document.querySelector(".answers");
 const nextButtonEl = document.querySelector(".nextBtn");
+const startBtnEl = document.querySelector(".start-btn");
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -186,9 +187,19 @@ function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
 
-  // resetField();
-  // questionEl.textContent = "Choose the quiz.";
-  showQuestion();
+  questionEl.textContent = "Start quiz!";
+
+  startBtnEl.addEventListener("click", () => {
+    answersButtons.classList.remove("hidden");
+
+    if (startBtnEl.classList.contains("show")) {
+      startBtnEl.classList.remove("show");
+    }
+
+    startBtnEl.classList.add("hidden");
+
+    showQuestion();
+  });
 }
 
 function showQuestion() {
@@ -271,6 +282,8 @@ function shuffleAnswers(array) {
 nextButtonEl.addEventListener("click", () => {
   if (currentQuestionIndex > questions.length - 1) {
     startQuiz();
+    startBtnEl.classList.add("show");
+    nextButtonEl.classList.remove("show");
   } else {
     showNextQuestion();
   }
