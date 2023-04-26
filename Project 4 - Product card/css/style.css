@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0000ff;
+  --ligth: #f7f7f7f7;
+  --dark: #0e0e0e;
+  --ligth-gray: #d4c9c9;
+  --gray: #808080;
+  --danger: #ed2f2f;
+}
+
+body,
+html {
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rubik", sans-serif;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: var(--dark);
+}
+
+button {
+  font-family: "Rubik", sans-serif;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.card {
+  max-width: 660px;
+  min-height: fit-content;
+  padding: 50px;
+  margin: 10px;
+  background-color: var(--ligth);
+  border-radius: 10px;
+}
+.card__wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+.card__left {
+}
+.card__brand {
+}
+/* Slider */
+.swiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.swiper-pagination {
+}
+.swiper-button-prev {
+}
+.swiper-button-next {
+}
+.card__right {
+  width: 44%;
+}
+.card__right-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+.card__model {
+}
+.card__specification {
+}
+#specification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  color: var(--primary);
+}
+.card__title {
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.card__title span {
+  font-size: 0.8em;
+}
+.card__subtitle {
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+.card__description {
+  margin-bottom: 20px;
+}
+.card__rating-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.card__rating .material-symbols-outlined {
+  font-size: 16px;
+  color: var(--gray);
+  cursor: pointer;
+}
+.rating {
+}
+.card__rating-avarage {
+  font-size: 14px;
+  color: var(--danger);
+}
+.card__rating-avarage--gray {
+  color: var(--gray);
+}
+.card__price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.card__price-amount {
+  font-weight: 500;
+  color: var(--danger);
+}
+.card__color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.card__color-title {
+  font-size: 14px;
+  color: var(--gray);
+  font-weight: 400;
+}
+.card__color-choose {
+}
+.card__shop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.card__shop-counter {
+  font-size: 14px;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+#counter {
+  padding: 5px;
+  max-width: 40px;
+}
+.counter__buttons {
+  display: flex;
+  flex-direction: column;
+}
+.counter__buttons .material-symbols-outlined {
+  font-size: 14px;
+}
+.conter__btn-prev {
+}
+.conter__btn-next {
+}
+.card__shop-buy {
+  padding: 10px;
+  background-color: var(--primary);
+  border-radius: 5px;
+  color: var(--ligth);
+}
